@@ -1,0 +1,12 @@
+.tabContainer {
+  display: flex;
+  column-gap: 20px;
+  .tab {
+    padding: 10px 15px;
+    background: aqua;
+    &:hover{
+      background: darken($color: aqua, $amount: 3);
+      cursor: pointer;
+    }
+  }
+}
