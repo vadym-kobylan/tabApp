@@ -1,32 +1,19 @@
-import React, { useEffect } from 'react';
-import styles from '../styles.module.scss';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import DummyTable from './DummyTable';
 import DummyList from './DummyList';
 import DummyChart from './DummyChart';
 
-const TabContent = () => {
-  // let { tabId } = useParams();
-  // console.log(tabId);
-  // let tabToRender;
-  // switch (tabId) {
-  //   case 'dummyTable':
-  //     tabToRender = <DummyTable />;
-  //     break;
-  //   case 'dummyList':
-  //     tabToRender = <DummyList />;
-  //     break;
+const mapTabs = {
+  dummyTable: <DummyTable />,
+  dummyChart: <DummyChart />,
+  dummyList: <DummyList />,
+};
 
-  //   case 'dummyChart':
-  //     tabToRender = <DummyChart />;
-  //     break;
+const TabContent = ({ initialTab }) => {
+  const { tabId } = useParams();
 
-  //   default:
-  //     tabToRender = <></>;
-  //     break;
-  // }
-
-  return <div>sadsad</div>;
+  return <div>{mapTabs[tabId || initialTab]}</div>;
 };
 
 export default TabContent;
