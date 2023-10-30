@@ -10,7 +10,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/vadym-kobylan/tabApp.git
    ```
 2. Install NPM packages
    ```sh
