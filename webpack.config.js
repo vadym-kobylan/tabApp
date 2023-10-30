@@ -31,9 +31,6 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
-  },
-  output: {
-    filename: 'main.js',
-    publicPath: '/',
+    allowedHosts: 'all',
   },
 };
