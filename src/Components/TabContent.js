@@ -14,6 +14,7 @@ const mapTabs = {
 
 const TabContent = ({ initialTab, setActiveTab }) => {
   const { tabId } = useParams();
+  setActiveTab?.(tabId);
   return <div className={styles.tabContent}>{mapTabs[tabId || initialTab]}</div>;
 };
 
