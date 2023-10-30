@@ -24,11 +24,11 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-3. Launch the project`
+3.1. Launch the project`
    ```js
    npm start
    ```
-4. Build the project`
+3.2. Build the project`
    ```js
    npm run build
    ```
