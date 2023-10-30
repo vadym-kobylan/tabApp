@@ -2,13 +2,11 @@ import React from 'react';
 import styles from '../styles.module.scss';
 import { Link } from 'react-router-dom';
 
-const TabMenu = ({ tabs }) => {
-  const sortedTabs = tabs.slice().sort((a, b) => a.order - b.order);
-
+const TabMenu = ({ tabs, activeTab }) => {
   return (
-    <div className={styles.tabContainer}>
-      {sortedTabs.map(({ id, title }) => (
-        <Link to={`/tabs/${id}`} className={styles.tab} key={id}>
+    <div className={styles.tabButtonsWrapper}>
+      {tabs.map(({ id, title }) => (
+        <Link to={`/${id}`} className={activeTab === id ? styles.activeTab : styles.tab} key={id}>
           {title}
         </Link>
       ))}

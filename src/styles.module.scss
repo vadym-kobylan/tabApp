@@ -1,12 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Open Sans';
+  background: #2c3e50;
+  color: #ecf0f1;
+  line-height: 1.618em;
+}
 .tabContainer {
-  display: flex;
-  column-gap: 20px;
-  .tab {
-    padding: 10px 15px;
-    background: aqua;
-    &:hover{
-      background: darken($color: aqua, $amount: 3);
+  padding-top: 10rem;
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+
+  .tabButtonsWrapper {
+    background: #1abc9c;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .tab,
+    .activeTab {
+      position: relative;
+      display: block;
+      line-height: 2.75em;
+      height: 3em;
+      padding: 0 1.618em;
+      background: #1abc9c;
+      border-right: 0.125rem solid #16a085;
+      color: #fff;
       cursor: pointer;
+      top: 0;
+      transition: all 0.25s;
+    }
+    .tab:hover {
+      top: -0.25rem;
+      transition: top 0.25s;
+    }
+
+    .activeTab {
+      background: #fff !important;
+      color: #2c3e50;
+      border-bottom: none;
+      border-right: 0.125rem solid #fff;
+      transition: all 0.35s;
+      z-index: 1;
+    }
+  }
+  .tabContent {
+    height: 12rem;
+    z-index: 1;
+    top: 2.75em;
+    left: 0;
+    padding: 1.618rem;
+    background: #fff;
+    color: #2c3e50;
+    border-bottom: 0.25rem solid #bdc3c7;
+    transition: all 0.35s;
+  }
+}
+
+.chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  .bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .barInner {
+      background-color: #007bff;
+      width: 50px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+    .label {
+      margin-top: 5px;
     }
   }
 }

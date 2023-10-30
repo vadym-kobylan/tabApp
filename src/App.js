@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { Suspense, useState } from 'react';
 import tabs from '/public/tabs.json';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import TabMenu from './Components/TabMenu';
 import TabContent from './Components/TabContent';
+import styles from './styles.module.scss';
 
 const App = () => {
   const sortedTabs = tabs.sort((a, b) => a.order - b.order);
-  console.log(sortedTabs);
+  const [activeTab, setActiveTab] = useState(sortedTabs[0].id);
   return (
-    <>
-      <TabMenu tabs={tabs} />
+    <div className={styles.tabContainer}>
+      <TabMenu tabs={sortedTabs} activeTab={activeTab} />
       <Routes>
-        <Route exact path="*" element={<Navigate to="/tabs" />} />
-        <Route path="/tabs/:tabId" element={<TabContent tabs={sortedTabs} />} />
-        <Route path="/tabs" element={<TabContent tabs={sortedTabs} />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<>...</>}>
+              <TabContent initialTab={sortedTabs[0].id} />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/:tabId"
+          element={
+            <Suspense fallback={<>...</>}>
+              <TabContent setActiveTab={setActiveTab} />
+            </Suspense>
+          }
+        />
       </Routes>
-    </>
+    </div>
   );
 };
 

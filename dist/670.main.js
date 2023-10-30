@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktabapp=self.webpackChunktabapp||[]).push([[670],{670:(s,e,l)=>{l.r(e),l.d(e,{default:()=>a}),l(294);var i=l(893);const a=()=>(0,i.jsx)("div",{children:(0,i.jsxs)("ul",{children:[(0,i.jsx)("li",{children:"Dummy"}),(0,i.jsx)("li",{children:"List"})]})})}}]);
