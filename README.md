@@ -1,4 +1,6 @@
 <!-- GETTING STARTED -->
+## [Live version of project](https://backendless-tabapp.vercel.app/)
+
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
@@ -32,6 +34,3 @@ _Below is an example of how you can instruct your audience on installing and set
    ```js
    npm run build
    ```
-
-### Installation
-Link on live website: [click]([https://example.com](https://backendless-tabapp.vercel.app/)https://backendless-tabapp.vercel.app/)
